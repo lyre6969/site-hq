@@ -1,8 +1,86 @@
-body {
+/* --- RESET E CONFIGURAÇÕES GLOBAIS --- */
+* {
   margin: 0;
-  height: 100vh;
-  background-image: url("../img/imgFundo_01.jpeg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  overflow-x: hidden; /* Evita barra de rolagem horizontal */
+  background-color: #000; /* Cor base de todo o site */
+  color: white;
+  font-family: 'Italiana', serif;
+}
+
+/* --- CONTAINER PRINCIPAL --- */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* --- CONFIGURAÇÃO COMUM PARA TODAS AS SEÇÕES --- */
+section {
+  width: 100%;
+  min-height: 100vh; /* Cada seção ocupa pelo menos a tela cheia */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* --- SEÇÃO 1: HOMEM ARANHA (TOPO) --- */
+.section-hero {
+  /* Gradiente para suavizar a transição para o preto embaixo */
+  background: linear-gradient(to bottom, transparent 70%, #000 100%), 
+              url("../img/imgFundo_01.jpeg") center/cover no-repeat;
+}
+
+/* --- SEÇÃO 2: GIF (THANOS / SOBRE) --- */
+.section-gif {
+  /* Gradiente em cima e embaixo para o GIF não ficar com bordas secas */
+  background: linear-gradient(to bottom, #000 0%, transparent 15%, transparent 85%, #000 100%),
+              url("../img/gif_01.gif") center/cover no-repeat;
+  padding-top: 100px;
+}
+
+/* --- SEÇÃO 3: FUNDO PRETO (HQS / NEWS) --- */
+.section-black {
+  background-color: #000;
+  padding: 80px 20px;
+}
+
+/* --- SEÇÃO 4: SURFISTA PRATEADO / FINAL --- */
+.section-footer-bg {
+  /* Gradiente no topo para vir do preto e mostrar a imagem aos poucos */
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 20%, transparent 80%, #000 100%),
+              url("../img/fundo_03.png") top center/cover no-repeat;
+  padding: 80px 20px;
+}
+
+/* --- ELEMENTOS DE TEXTO --- */
+.content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.titulo-secao {
+  font-size: 3.5rem;
+  margin-bottom: 40px;
+  text-align: center;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* --- RESPONSIVIDADE BÁSICA --- */
+@media (max-width: 768px) {
+  .titulo-secao {
+    font-size: 2rem;
+  }
+  
+  section {
+    min-height: 60vh; /* Em telas menores, as seções podem ser mais baixas */
+  }
 }
