@@ -5,22 +5,22 @@
   padding: 8px 25px;
   position: fixed;
   top: 0;
-  left: 0; /* Adicionado para garantir o alinhamento correto */
+  left: 0; 
   width: 100%;
   box-sizing: border-box;
 
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+  -webkit-backdrop-filter: blur(10px); 
 
   color: white;
   font-family: 'Italiana', serif;
-  z-index: 1000; /* Garante que a navbar fique por cima de tudo */
+  z-index: 1000; 
 }
 
 .navbar ul {
   display: flex;
-  gap: 20px; /* Aumentei um pouco o espaço entre os itens */
+  gap: 20px; 
   list-style: none;
   margin: 0;
   padding: 0;
