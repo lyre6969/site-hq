@@ -1,50 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
-.navbar{
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 25px;
+  padding: 8px 25px;
   position: fixed;
   top: 0;
+  left: 0; /* Adicionado para garantir o alinhamento correto */
   width: 100%;
   box-sizing: border-box;
 
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
 
   color: white;
-
   font-family: 'Italiana', serif;
+  z-index: 1000; /* Garante que a navbar fique por cima de tudo */
 }
 
-.navbar ul{
+.navbar ul {
   display: flex;
-  gap: 10px;
+  gap: 20px; /* Aumentei um pouco o espaço entre os itens */
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.navbar li{
+.navbar li {
   cursor: pointer;
+  transition: opacity 0.2s;
 }
 
-/* estilo da logo */
-.logo{
-  height: 40px;
-  cursor: pointer;
+.navbar li:hover {
+  opacity: 0.7;
 }
-.logo-container{
+
+/* estilo_logo */
+.logo-container {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.logo{
+.logo {
   height: 40px;
+  cursor: pointer;
 }
 
-.logo-text{
-  font-size: 16px;
+.logo-text {
+  font-size: 1.2rem;
   font-weight: bold;
 }

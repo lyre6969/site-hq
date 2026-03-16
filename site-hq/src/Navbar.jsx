@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
-import "./Navbar.css"
-import logo from "../img/logo.png"
+import React from 'react';
+import "./Navbar.css";
+import logo from "../img/logo.png";
 
 function Navbar() {
   return (
     <nav className="navbar">
-
       <div className="logo-container">
         <img src={logo} alt="Logo HQ" className="logo"/>
         <span className="logo-text">HQs</span>
@@ -17,7 +16,7 @@ function Navbar() {
         <li>Favoritos</li>
       </ul>
     </nav>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
