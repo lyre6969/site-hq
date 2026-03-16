@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
 import "./Navbar.css"
+import logo from "../img/logo.png"
 
 function Navbar() {
   return (
     <nav className="navbar">
-      <h1>HQs</h1>
+
+      <div className="logo-container">
+        <img src={logo} alt="Logo HQ" className="logo"/>
+        <span className="logo-text">HQs</span>
+      </div>
 
       <ul>
         <li>Home</li>

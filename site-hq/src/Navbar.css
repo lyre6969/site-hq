@@ -1,17 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
 .navbar{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 25px;
+  padding: 10px 25px;
   position: fixed;
   top: 0;
   width: 100%;
-  box-sizing: border-box; /* resolve o problema */
+  box-sizing: border-box;
 
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
 
   color: white;
+
+  font-family: 'Italiana', serif;
 }
 
 .navbar ul{
@@ -25,7 +28,23 @@
 .navbar li{
   cursor: pointer;
 }
-.navbar h1{
-  font-size: 18px;
-  margin: 0;
+
+/* estilo da logo */
+.logo{
+  height: 40px;
+  cursor: pointer;
+}
+.logo-container{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo{
+  height: 40px;
+}
+
+.logo-text{
+  font-size: 16px;
+  font-weight: bold;
 }
