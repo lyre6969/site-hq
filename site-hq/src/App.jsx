@@ -21,18 +21,17 @@ function App() {
     gsap.from(".pow", { scale: 0, rotation: -30, duration: 0.8, ease: "back.out(2)", delay: 0.5 });
     gsap.from(".textoFrame p", { x: -100, opacity: 0, stagger: 0.2, duration: 0.8, ease: "power2.out", delay: 0.8 });
 
-    // --- ANIMAÇÃO DOS CARDS CORRIGIDA ---
-    gsap.from(".card-sobre", {
+    // Animação do Texto Lateral e dos Cards
+    gsap.from(".sobre-texto-lateral, .card-sobre", {
       y: 100,
       opacity: 0,
-      stagger: 0.3,
+      stagger: 0.2,
       duration: 1.2,
       ease: "power4.out",
       scrollTrigger: {
-        trigger: ".cards-wrapper", // Trigger no container pai para estabilidade
+        trigger: ".cards-wrapper", 
         start: "top 80%",
         toggleActions: "play none none reverse",
-        // Força o recálculo ao carregar
         onRefresh: (self) => self.progress > 0 && self.animation.progress(1)
       }
     });
@@ -77,6 +76,16 @@ function App() {
           <h2 className="titulo-secao">Sobre</h2>
           
           <div className="cards-wrapper">
+            {/* TEXTO À ESQUERDA DOS CARDS */}
+            <div className="sobre-texto-lateral">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
+
             <div className="card-sobre card-1">
               <div className="card-video-box">
                 <img src="../img/gifPant.gif" alt="Pantera" className="card-img" />

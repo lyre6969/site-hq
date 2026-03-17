@@ -172,12 +172,26 @@ section {
   /* Aqui você precisaria ajustar as posições absolute para mobile */
 }
 .cards-wrapper {
-padding-left: 500px; 
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px;
+  justify-content: flex-end; /* Empurra o conjunto para a direita */
+  align-items: center;      /* Alinha o texto centralizado verticalmente com os cards */
+  gap: 60px;                /* Espaço entre o texto e os cards */
+  width: 100%;
+  padding-right: 5%;
   margin-top: 50px;
+}
+
+.sobre-texto-lateral {
+  max-width: 400px;         /* Controla a largura da coluna de texto */
+  text-align: right;        /* Alinha o texto em direção aos cards */
+}
+
+.sobre-texto-lateral p {
+  font-family: 'Jersey 10', sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 .card-sobre {
@@ -217,5 +231,5 @@ padding-left: 500px;
   font-family: 'Italiana', sans-serif;
   font-size: 1.1rem;
   line-height: 1.4;
-  color: #ddd;
+  color: #dddddd;
 }
