@@ -14,31 +14,43 @@ function App() {
   const container = useRef(); 
 
   useGSAP(() => {
-    // Animações de Entrada
+    // --- Hero Section ---
     gsap.from(".search-container", { y: -100, opacity: 0, duration: 1, ease: "power4.out" });
     gsap.from(".avenFundo", { x: 100, opacity: 0, duration: 1.2, ease: "power3.out", delay: 0.6 });
     gsap.from(".textoAven p", { opacity: 0, y: -20, stagger: 0.2, duration: 0.6, ease: "back.out(1.7)", delay: 1.2 });
     gsap.from(".pow", { scale: 0, rotation: -30, duration: 0.8, ease: "back.out(2)", delay: 0.5 });
     gsap.from(".textoFrame p", { x: -100, opacity: 0, stagger: 0.2, duration: 0.8, ease: "power2.out", delay: 0.8 });
-    // Animação da Primeira linha do frame (da esquerda)
-gsap.from(".linha1", {
-  x: -200, // sai da esquerda
-  opacity: 0,
-  duration: 1,
-  ease: "power3.out",
-  delay: 1, // você pode ajustar
-});
+    
+    gsap.from(".linha1", { x: -200, opacity: 0, duration: 1, ease: "power3.out", delay: 1 });
+    gsap.from(".linha2", { x: 200, opacity: 0, duration: 1, ease: "power3.out", delay: 1.2 });
 
-// Animação da Segunda linha do frame (da direita)
-gsap.from(".linha2", {
-  x: 200, // sai da direita
-  opacity: 0,
-  duration: 1,
-  ease: "power3.out",
-  delay: 1.2, // ligeiramente depois da primeira
-});
+    // --- LINHAS 3 E 4 (DIREÇÕES CORRIGIDAS) ---
+    
+    // Linha 3: Vem da DIREITA para a esquerda (x positivo)
+    gsap.from(".linha3", {
+      x: 300, 
+      opacity: 0, 
+      duration: 1.5, 
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".section-gif",
+        start: "top 60%",
+      }
+    });
 
-    // Animação do Texto Lateral e dos Cards
+    // Linha 4: Vem da ESQUERDA para a direita (x negativo)
+    gsap.from(".linha4", {
+      x: -300, 
+      opacity: 0, 
+      duration: 1.5, 
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".section-gif",
+        start: "top 60%",
+      }
+    });
+
+    // --- TEXTO E CARDS ---
     gsap.from(".sobre-texto-lateral, .card-sobre", {
       y: 100,
       opacity: 0,
@@ -93,13 +105,12 @@ gsap.from(".linha2", {
           <h2 className="titulo-secao">Sobre</h2>
           
           <div className="cards-wrapper">
-            {/* TEXTO À ESQUERDA DOS CARDS */}
+            <img src="../img/linha3.png" className="linha3" alt="linha 3" />
+            
             <div className="sobre-texto-lateral">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                nisi ut aliquip ex ea commodo consequat.
+                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
             </div>
 
@@ -108,7 +119,7 @@ gsap.from(".linha2", {
                 <img src="../img/gifPant.gif" alt="Pantera" className="card-img" />
               </div>
               <div className="card-text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
               </div>
             </div>
 
@@ -117,9 +128,11 @@ gsap.from(".linha2", {
                 <img src="../img/gifThor.gif" alt="Thor" className="card-img" />
               </div>
               <div className="card-text">
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
               </div>
             </div>
+
+            <img src="../img/linha4.png" className="linha4" alt="linha 4" />
           </div>
         </div>
       </section>

@@ -31,19 +31,19 @@ section {
   position: relative;
 }
 
-/* --- SEÇÃO 1: HOMEM ARANHA (TOPO) --- */
+/* --- SEÇÃO 1: HERO (HOMEM ARANHA) --- */
 .section-hero {
   background: linear-gradient(to bottom, transparent 70%, #000 100%), 
               url("../img/imgFundo_01.jpeg") center/cover no-repeat;
 }
 
-/* --- SEÇÃO 2: VÍDEO (ANTIGO GIF) --- */
+/* --- SEÇÃO 2: VÍDEO E CARDS --- */
 .section-gif {
-  background: #000; /* Fundo preto caso o vídeo demore a carregar */
+  background: #000;
   overflow: hidden;
+  position: relative;
 }
 
-/* Estilo para o vídeo ocupar todo o fundo da seção */
 .video-background {
   position: absolute;
   top: 0;
@@ -54,165 +54,91 @@ section {
   z-index: 1; 
 }
 
-/* Gradiente para suavizar as bordas do vídeo */
 .video-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 2; /* Fica acima do vídeo */
-  background: linear-gradient(to bottom, 
-              #000 0%, 
-              transparent 15%, 
-              transparent 85%, 
-              #000 100%);
-  pointer-events: none; /* Permite clicar através do gradiente */
+  z-index: 2;
+  background: linear-gradient(to bottom, #000 0%, transparent 15%, transparent 85%, #000 100%);
+  pointer-events: none;
 }
 
-/* --- SEÇÃO 3 E 4 --- */
-.section-black {
-  background-color: #000;
-  padding: 80px 20px;
-}
-
-.section-footer-bg {
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 20%, transparent 80%, #000 100%),
-              url("../img/fundo_03.png") top center/cover no-repeat;
-  padding: 80px 20px;
-}
-
-/* --- CONTEÚDO E POSICIONAMENTO --- */
-.content {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  z-index: 10; /* Garante que o texto fique acima do vídeo */
-  position: relative;
-}
-
-.titulo-secao {
-  font-size: 3.5rem;
-  margin-bottom: 40px;
-  text-align: center;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
-}
-
-.frames {
-  position: relative;
-  width: 100%;
-  height: 1000px; /* Ajuste conforme a altura necessária para os frames */
-}
-
-/* --- ELEMENTOS FLUTUANTES (POW, LINHAS, TEXTOS) --- */
-.pow {
-  position: absolute;
-  top: 60px;
-  left: -100px;
-}
-
-.linha1 {
-  position: absolute;
-  top: 470px;
-  width: 600px;
-  left: 550px;
-}
-
-.linha2 {
-  position: absolute;
-  top: 900px;
-  width: 600px;
-  left: 90px;
-}
-
-.frameTexto {
-  position: absolute;
-  top: 510px;
-}
-
-.avenFundo {
-  position: absolute;
-  top: 130px;
-  left: 1090px;
-}
-
-.textoAven {
-  position: absolute;
-  top: 100px;
-  left: 1090px;
-  display: flex;
-  gap: 40px;
-}
-
-.textoPow {
-  position: absolute;
-  top: 118px;
-  left: 90px;
-  font-family: "Jersey 10", sans-serif;
-  font-size: 30px;
-}
-
-/* --- GRID DE TEXTO DO FRAME --- */
-.textoFrame p {
-  font-family: "Jersey 10", sans-serif;
-  position: absolute;
-  margin: 0;
-}
-
-.textoFrame .p1 { top: 550px; left: 360px; font-size: 13px; }
-.textoFrame .p2 { top: 590px; left: 50px; font-size: 20px; }
-.textoFrame .p3 { top: 720px; left: 60px; font-size: 44px; }
-.textoFrame .p4 { top: 640px; left: 200px; font-size: 34px; }
-.textoFrame .p5 { top: 800px; left: 50px; font-size: 16px; }
-
-/* --- RESPONSIVIDADE --- */
-@media (max-width: 768px) {
-  .titulo-secao { font-size: 2rem; }
-  section { min-height: 60vh; }
-  /* Aqui você precisaria ajustar as posições absolute para mobile */
-}
+/* --- CARDS WRAPPER (CONTAINER DOS CARDS E TEXTO) --- */
 .cards-wrapper {
+  position: relative; 
   display: flex;
-  justify-content: flex-end; /* Empurra o conjunto para a direita */
-  align-items: center;      /* Alinha o texto centralizado verticalmente com os cards */
-  gap: 60px;                /* Espaço entre o texto e os cards */
+  justify-content: flex-end; /* Joga tudo para a direita */
+  align-items: center;
+  gap: 40px;
   width: 100%;
-  padding-right: 5%;
-  margin-top: 50px;
+  padding-right: 8%;
+  margin-top: 120px;
+  padding-bottom: 150px;
+  z-index: 10;
 }
 
+/* --- LINHAS DECORATIVAS 3 E 4 --- */
+.linha3 {
+  position: absolute;
+  top: 90px;
+  left: 50px;        /* Saindo da esquerda */
+  width: 800px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.linha4 {
+  position: absolute;
+  bottom: 49px;
+  right: -50px;      /* Saindo da direita */
+  width: 900px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* --- TEXTO LATERAL --- */
 .sobre-texto-lateral {
-  max-width: 400px;         /* Controla a largura da coluna de texto */
-  text-align: right;        /* Alinha o texto em direção aos cards */
+  max-width: 380px;
+  text-align: right;
+  z-index: 12;
 }
 
 .sobre-texto-lateral p {
   font-family: 'Jersey 10', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   line-height: 1.2;
   color: #fff;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.9);
 }
 
+/* --- ESTILO DOS CARDS --- */
 .card-sobre {
-  width: 380px;
+  width: 360px;
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  
-  /* --- AS BORDAS DO SEU PRINT --- */
-  /* Ordem: top-left, top-right, bottom-right, bottom-left */
-  border-radius: 5px 50px 5px 50px; 
-  
+  backdrop-filter: blur(15px);
+  border-radius: 5px 50px 5px 50px; /* Seu design Mixed Radius */
   border: 1px solid rgba(255, 255, 255, 0.1);
-  overflow: hidden; /* Garante que o GIF também fique com as bordas cortadas */
+  overflow: hidden;
   transition: transform 0.3s ease, border-color 0.3s ease;
+  z-index: 11;
+}
+
+/* Efeito de Escadinha (Desalinhado) */
+.card-1 {
+  margin-top: -50px;
+}
+
+.card-2 {
+  margin-top: 50px;
 }
 
 .card-video-box {
   width: 100%;
-  height: 220px;
+  aspect-ratio: 16 / 11; /* Essencial para não bugar no F5 */
   overflow: hidden;
-  /* Aplicamos o mesmo raio na caixa da imagem para não vazar */
+  background: #111;
   border-radius: 5px 50px 0 0; 
 }
 
@@ -222,14 +148,43 @@ section {
   object-fit: cover;
 }
 
-.card-sobre:hover {
-  transform: scale(1.03);
-  border-color: rgba(255, 255, 255, 0.4);
-}
 .card-text {
   padding: 20px;
-  font-family: 'Italiana', sans-serif;
+  font-family: 'Jersey 10', sans-serif; /* Mudei para Jersey para combinar com o tema */
   font-size: 1.1rem;
   line-height: 1.4;
-  color: #dddddd;
+  color: #ddd;
+}
+
+.card-sobre:hover {
+  transform: scale(1.05) translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* --- ELEMENTOS DA SEÇÃO 1 (MANTIDOS) --- */
+.content { width: 100%; max-width: 1200px; margin: 0 auto; z-index: 10; position: relative; }
+.titulo-secao { font-size: 3.5rem; margin-bottom: 40px; text-align: center; }
+.frames { position: relative; width: 100%; height: 1000px; }
+.pow { position: absolute; top: 60px; left: -100px; }
+.linha1 { position: absolute; top: 470px; width: 600px; left: 550px; }
+.linha2 { position: absolute; top: 900px; width: 600px; left: 90px; }
+.frameTexto { position: absolute; top: 510px; }
+.avenFundo { position: absolute; top: 130px; left: 1090px; }
+.textoAven { position: absolute; top: 100px; left: 1090px; display: flex; gap: 40px; }
+.textoPow { position: absolute; top: 118px; left: 90px; font-family: "Jersey 10", sans-serif; font-size: 30px; }
+
+.textoFrame p { font-family: "Jersey 10", sans-serif; position: absolute; margin: 0; }
+.textoFrame .p1 { top: 550px; left: 360px; font-size: 13px; }
+.textoFrame .p2 { top: 590px; left: 50px; font-size: 20px; }
+.textoFrame .p3 { top: 720px; left: 60px; font-size: 44px; }
+.textoFrame .p4 { top: 640px; left: 200px; font-size: 34px; }
+.textoFrame .p5 { top: 800px; left: 50px; font-size: 16px; }
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 1024px) {
+  .cards-wrapper { flex-direction: column; align-items: center; padding-right: 0; }
+  .sobre-texto-lateral { text-align: center; }
+  .card-1, .card-2 { margin-top: 0; }
+  .linha3, .linha4 { display: none; } /* Esconde as linhas em telas pequenas para não poluir */
 }
