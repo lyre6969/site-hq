@@ -1,18 +1,69 @@
+import React, { useRef } from "react"; 
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import Navbar from "./Navbar";
-import SearchBar from "./SearchBar"; // 1. Importe o novo componente
+import SearchBar from "./SearchBar";
 import "./index.css";
-// import pow from "../img/POW!.png"; // Comentado pois você já usa o path direto no src abaixo
 
 function App() {
+  const container = useRef(); 
+
+  
+  useGSAP(() => {
+   
+    gsap.from(".search-container", {
+      y: -100,
+      opacity: 0,
+      duration: 1,
+      ease: "power4.out"
+    });
+gsap.from(".avenFundo", {
+      x: 100,           
+      opacity: 0,
+      duration: 1.2,
+      ease: "power3.out",
+      delay: 0.6       
+    });
+
+    
+    
+    gsap.from(".textoAven p", {
+      opacity: 0,
+      y: -20,           
+      stagger: 0.2,    
+      duration: 0.6,
+      ease: "back.out(1.7)", 
+      delay: 1.2      
+    });
+  
+    gsap.from(".pow", {
+      scale: 0,
+      rotation: -30,
+      duration: 0.8,
+      ease: "back.out(2)",
+      delay: 0.5
+    });
+
+
+    
+    gsap.from(".textoFrame p", {
+      x: -100,
+      opacity: 0,
+      stagger: 0.2, 
+      duration: 0.8,
+      ease: "power2.out",
+      delay: 0.8
+    });
+
+  }, { scope: container });
+
   return (
-    <div className="app-container">
+    
+    <div className="app-container" ref={container}> 
       <Navbar />
 
-      {/* 1ª Seção: Homem Aranha (Topo) */}
       <section className="section-hero">
         <div className="content">
-          
-     
           <SearchBar />
 
           <div className="frames">
@@ -28,7 +79,6 @@ function App() {
             </div>
 
             <img src="../img/PrimeiraLinhaDoFrame01.png" className="linha1" alt="linha" />
-
             <img src="../img/frameDeTextos01.png" className="frameTexto" alt="frame" />
             
             <div className="textoFrame">
@@ -44,23 +94,16 @@ function App() {
         </div>
       </section>
 
-      {/* 2ª Seção: O GIF (Sobre/Thanos) */}
+      {/* Outras seções... */}
       <section className="section-gif">
         <div className="content">
             <h2 className="titulo-secao">Sobre</h2>
         </div>
       </section>
 
-      {/* 3ª Seção: Fundo Preto (HQs) */}
       <section className="section-black">
         <div className="content">
             <h2 className="titulo-secao">News</h2>
-        </div>
-      </section>
-
-      {/* 4ª Seção: Nova Imagem de Fundo */}
-      <section className="section-footer-bg">
-        <div className="content">
         </div>
       </section>
     </div>
