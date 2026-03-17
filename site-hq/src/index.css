@@ -1,4 +1,5 @@
 /* --- RESET E CONFIGURAÇÕES GLOBAIS --- */
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -83,4 +84,104 @@ section {
   section {
     min-height: 60vh; /* Em telas menores, as seções podem ser mais baixas */
   }
+}
+.pow{
+  position: absolute;
+  top: 60px;
+  left: -100px;
+
+}
+.frames{
+  position: relative;
+}
+
+.linha1{
+  position: absolute;
+  top: 470px;
+    width: 600px;
+  left: 550px;
+}
+
+.linha2{
+  position: absolute;
+  top: 900px;
+  width: 600px;
+  left: 90px;
+}
+.frameTexto{
+  position: absolute;
+top: 510px;
+
+}
+.avenFundo{
+  position: absolute;
+  top: 130px;
+  left: 1090px;
+ 
+}
+.textoAven{
+  position: absolute;
+  top: 100px;
+  left: 1090px;
+
+  display: flex;
+  gap: 40px; /* espaço entre os lorem */
+}
+
+.textoPow{
+  position: absolute;
+  top: 118px;
+  left: 90px; /* ajusta até ficar do lado do POW */
+ font-family: "Jersey 10", sans-serif;
+  font-size: 30px;
+}
+
+
+.textoFrame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* ocupa todo o frame, cada <p> vai se posicionar dentro dele */
+}
+
+/* cada <p> com posição própria */
+.textoFrame .p1 {
+  position: absolute;
+  top: 550px;
+  left: 360px;
+  font-size: 13px;
+}
+
+.textoFrame .p2 {
+  position: absolute;
+  top: 590px;
+  left: 50px;
+  font-size: 20px;
+}
+
+.textoFrame .p3 {
+  position: absolute;
+  top: 720px;
+  left: 60px;
+  font-size: 44px;
+}
+
+.textoFrame .p4 {
+  position: absolute;
+  top: 640px;
+  left: 200px;
+  font-size: 34px;
+}
+
+.textoFrame .p5 {
+  position: absolute;
+  top: 800px;
+  left: 50px;
+  font-size: 16px;
+}
+
+.textoFrame p {
+  font-family: "Jersey 10", sans-serif;
+  margin: 0;
 }
