@@ -50,21 +50,7 @@ function App() {
       }
     });
 
-    // --- TEXTO E CARDS ---
-    gsap.from(".sobre-texto-lateral, .card-sobre", {
-      y: 100,
-      opacity: 0,
-      stagger: 0.2,
-      duration: 1.2,
-      ease: "power4.out",
-      scrollTrigger: {
-        trigger: ".cards-wrapper", 
-        start: "top 80%",
-        toggleActions: "play none none reverse",
-        onRefresh: (self) => self.progress > 0 && self.animation.progress(1)
-      }
-    });
-
+   
   }, { scope: container });
 
   return (
