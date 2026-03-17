@@ -91,7 +91,7 @@ section {
 
 .linha4 {
   position: absolute;
-  bottom: 49px;
+  bottom: -298px;
   right: -50px;      /* Saindo da direita */
   width: 900px;
   z-index: 5;
@@ -100,6 +100,9 @@ section {
 
 /* --- TEXTO LATERAL --- */
 .sobre-texto-lateral {
+  top: 180px;
+  left: 100px;
+  position: absolute;
   max-width: 380px;
   text-align: right;
   z-index: 12;
@@ -128,10 +131,16 @@ section {
 /* Efeito de Escadinha (Desalinhado) */
 .card-1 {
   margin-top: -50px;
+position: absolute;
+left: 500px;
+top: 150px;
 }
 
 .card-2 {
   margin-top: 50px;
+  position: absolute;
+  top: 50px;
+  left: 900px;
 }
 
 .card-video-box {
