@@ -5,19 +5,23 @@ import Navbar from "./Navbar";
 import SearchBar from "./SearchBar";
 import "./index.css";
 
+// Importe o seu vídeo MP4 aqui
+import videoHq from "../img/testeGifMaisQualidade.mp4";
+
 function App() {
   const container = useRef(); 
 
-  
   useGSAP(() => {
-   
+    // Animação da SearchBar
     gsap.from(".search-container", {
       y: -100,
       opacity: 0,
       duration: 1,
       ease: "power4.out"
     });
-gsap.from(".avenFundo", {
+
+    // Animação do fundo Avengers
+    gsap.from(".avenFundo", {
       x: 100,           
       opacity: 0,
       duration: 1.2,
@@ -25,8 +29,7 @@ gsap.from(".avenFundo", {
       delay: 0.6       
     });
 
-    
-    
+    // Texto "Lorem" da Avengers
     gsap.from(".textoAven p", {
       opacity: 0,
       y: -20,           
@@ -36,6 +39,7 @@ gsap.from(".avenFundo", {
       delay: 1.2      
     });
   
+    // Explosão do POW!
     gsap.from(".pow", {
       scale: 0,
       rotation: -30,
@@ -44,8 +48,7 @@ gsap.from(".avenFundo", {
       delay: 0.5
     });
 
-
-    
+    // Textos do Frame Principal
     gsap.from(".textoFrame p", {
       x: -100,
       opacity: 0,
@@ -58,10 +61,10 @@ gsap.from(".avenFundo", {
   }, { scope: container });
 
   return (
-    
     <div className="app-container" ref={container}> 
       <Navbar />
 
+      {/* 1ª Seção: Homem Aranha (Topo) */}
       <section className="section-hero">
         <div className="content">
           <SearchBar />
@@ -94,16 +97,32 @@ gsap.from(".avenFundo", {
         </div>
       </section>
 
-      {/* Outras seções... */}
+      {/* 2ª Seção: VÍDEO MP4 (Substituindo o GIF) */}
       <section className="section-gif">
+        {/* O vídeo de fundo */}
+        <video autoPlay loop muted playsInline className="video-background">
+          <source src={videoHq} type="video/mp4" />
+          Seu navegador não suporta vídeos.
+        </video>
+        
+        {/* Overlay para os gradientes (definido no seu CSS) */}
+        <div className="video-overlay"></div>
+
         <div className="content">
             <h2 className="titulo-secao">Sobre</h2>
         </div>
       </section>
 
+      {/* 3ª Seção: News */}
       <section className="section-black">
         <div className="content">
             <h2 className="titulo-secao">News</h2>
+        </div>
+      </section>
+
+      {/* 4ª Seção: Footer / Surfista Prateado */}
+      <section className="section-footer-bg">
+        <div className="content">
         </div>
       </section>
     </div>
