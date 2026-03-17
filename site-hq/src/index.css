@@ -171,6 +171,77 @@ top: 150px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
+/* --- SEÇÃO 3: NEW (A QUE VOCÊ QUERIA COM IMAGEM) --- */
+.section-new {
+  /* Substitua pelo nome da sua imagem de fundo */
+  background: linear-gradient(to bottom, #000 0%, transparent 15%, transparent 85%, #000 100%), 
+              url("../img/fundo_03.png") center/cover no-repeat;
+  
+  justify-content: center;
+}
+/* --- ESTILO BASE PARA AMBOS (DESIGN IGUAL) --- */
+.titulo-secao, .titulo-secao01 {
+  font-family: 'Jersey 10', sans-serif;
+  font-size: clamp(4rem, 10vw, 8rem); 
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  letter-spacing: 0.2em; 
+  opacity: 0.9;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  position: relative;
+  z-index: 25; /* Garante que fique acima do vídeo/overlay */
+}
+
+/* Linhas Laterais para AMBOS */
+.titulo-secao::before, .titulo-secao::after,
+.titulo-secao01::before, .titulo-secao01::after {
+  content: "";
+  height: 2px;
+  width: 100px;
+  background: linear-gradient(to right, transparent, #fff);
+}
+.titulo-secao::after, .titulo-secao01::after {
+  background: linear-gradient(to left, transparent, #fff);
+}
+
+/* --- AJUSTES INDIVIDUAIS DE POSIÇÃO --- */
+
+/* 1. TÍTULO "SOBRE" (Seção do Vídeo) */
+.titulo-secao {
+
+  margin-top: 60px; 
+  margin-bottom: 80px;
+}
+
+/* 2. TÍTULO "NEWS" (Seção da Imagem de Fundo) */
+.titulo-secao01 {
+  /* Como essa seção é só a imagem, ele pode subir mais */
+  margin-top: -450px; 
+  margin-bottom: 60px;
+}
+
+/* --- AJUSTE DE RESPONSIVIDADE INDIVIDUAL --- */
+@media (max-width: 1024px) {
+  .titulo-secao {
+    margin-top: 0; /* No mobile o vídeo encurta, então zeramos a margem */
+    margin-bottom: 40px;
+  }
+  
+  .titulo-secao01 {
+    margin-top: -50px; /* No mobile a imagem de fundo muda, subimos só um pouco */
+  }
+
+  /* Esconde as linhas no mobile para o texto não ficar minúsculo */
+  .titulo-secao::before, .titulo-secao::after,
+  .titulo-secao01::before, .titulo-secao01::after {
+    display: none;
+  }
+}
 /* --- ELEMENTOS DA SEÇÃO 1 (MANTIDOS) --- */
 .content { width: 100%; max-width: 1200px; margin: 0 auto; z-index: 10; position: relative; }
 .titulo-secao { font-size: 3.5rem; margin-bottom: 40px; text-align: center; }

@@ -24,33 +24,23 @@ function App() {
     gsap.from(".linha1", { x: -200, opacity: 0, duration: 1, ease: "power3.out", delay: 1 });
     gsap.from(".linha2", { x: 200, opacity: 0, duration: 1, ease: "power3.out", delay: 1.2 });
 
-    // --- LINHAS 3 E 4 (DIREÇÕES CORRIGIDAS) ---
-    
-    // Linha 3: Vem da DIREITA para a esquerda (x positivo)
+    // Linha 3 e 4
     gsap.from(".linha3", {
-      x: 300, 
-      opacity: 0, 
-      duration: 1.5, 
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: ".section-gif",
-        start: "top 60%",
-      }
+      x: 300, opacity: 0, duration: 1.5, ease: "power3.out",
+      scrollTrigger: { trigger: ".section-gif", start: "top 60%" }
     });
 
-    // Linha 4: Vem da ESQUERDA para a direita (x negativo)
     gsap.from(".linha4", {
-      x: -300, 
-      opacity: 0, 
-      duration: 1.5, 
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: ".section-gif",
-        start: "top 60%",
-      }
+      x: -300, opacity: 0, duration: 1.5, ease: "power3.out",
+      scrollTrigger: { trigger: ".section-gif", start: "top 60%" }
     });
 
-   
+    // Animação simples para o título da seção NEW
+    gsap.from(".section-new .titulo-secao", {
+      y: 50, opacity: 0, duration: 1,
+      scrollTrigger: { trigger: ".section-new", start: "top 80%" }
+    });
+
   }, { scope: container });
 
   return (
@@ -89,42 +79,38 @@ function App() {
 
         <div className="content">
           <h2 className="titulo-secao">Sobre</h2>
-          
           <div className="cards-wrapper">
             <img src="../img/linha3.png" className="linha3" alt="linha 3" />
-            
             <div className="sobre-texto-lateral">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, consectetur adipiscing elit, consectetur adipiscing elit.</p>
             </div>
-
             <div className="card-sobre card-1">
               <div className="card-video-box">
                 <img src="../img/gifPant.gif" alt="Pantera" className="card-img" />
               </div>
               <div className="card-text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               </div>
             </div>
-
             <div className="card-sobre card-2">
               <div className="card-video-box">
                 <img src="../img/gifThor.gif" alt="Thor" className="card-img" />
               </div>
               <div className="card-text">
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
               </div>
             </div>
-
             <img src="../img/linha4.png" className="linha4" alt="linha 4" />
           </div>
         </div>
       </section>
 
-      <section className="section-black">
-        <div className="content"><h2 className="titulo-secao">News</h2></div>
+      {/* --- NOVA SEÇÃO COM IMAGEM --- */}
+      <section className="section-new">
+        <div className="content">
+          <h2 className="titulo-secao01">News</h2>
+          {/* Você pode colocar mais conteúdo aqui se quiser */}
+        </div>
       </section>
     </div>
   );
