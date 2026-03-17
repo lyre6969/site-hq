@@ -20,6 +20,23 @@ function App() {
     gsap.from(".textoAven p", { opacity: 0, y: -20, stagger: 0.2, duration: 0.6, ease: "back.out(1.7)", delay: 1.2 });
     gsap.from(".pow", { scale: 0, rotation: -30, duration: 0.8, ease: "back.out(2)", delay: 0.5 });
     gsap.from(".textoFrame p", { x: -100, opacity: 0, stagger: 0.2, duration: 0.8, ease: "power2.out", delay: 0.8 });
+    // Animação da Primeira linha do frame (da esquerda)
+gsap.from(".linha1", {
+  x: -200, // sai da esquerda
+  opacity: 0,
+  duration: 1,
+  ease: "power3.out",
+  delay: 1, // você pode ajustar
+});
+
+// Animação da Segunda linha do frame (da direita)
+gsap.from(".linha2", {
+  x: 200, // sai da direita
+  opacity: 0,
+  duration: 1,
+  ease: "power3.out",
+  delay: 1.2, // ligeiramente depois da primeira
+});
 
     // Animação do Texto Lateral e dos Cards
     gsap.from(".sobre-texto-lateral, .card-sobre", {
